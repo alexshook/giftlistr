@@ -1,1 +1,3 @@
-<%= @gifts %>
+<% @gifts.each do |gift| %>
+  <p><%= gift["title"] %></p>
+<% end %>
