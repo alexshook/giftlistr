@@ -5,4 +5,6 @@ Giftlistr::Application.routes.draw do
     resources :giftlists, shallow: true
   end
 
+  resources :gifts
+
 end

@@ -48,6 +48,11 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
 end
 
+group :development do
+  gem 'dotenv-rails'
+end
+
+
 gem 'puma'
 
 gem 'simple_form'
@@ -57,3 +62,5 @@ gem 'mail_form'
 gem 'ffaker'
 
 gem 'pry-rails'
+
+gem 'httparty'
