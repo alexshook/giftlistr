@@ -1,9 +1,5 @@
 require 'spec_helper'
 
-# 3.times do
-#   FactoryGirl.create(email: Faker::Internet.email, first_name: Faker::Name.name, last_name: Faker::Name.name)
-# end
-
 describe User do
   #throws password cannot be blank
   it "should have a valid factory" do

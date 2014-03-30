@@ -6,8 +6,4 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# not populating
-users = 20.times do
-  User.create({email: Faker::Internet.email, first_name: Faker::Name.name, last_name: Faker::Name.name})
-end
-
+# u1 = User.create(email: Faker::Internet.email, first_name: Faker::Name.name, last_name: Faker::Name.name)
