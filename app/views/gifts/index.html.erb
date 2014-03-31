@@ -1,3 +1,17 @@
-<% @gifts.each do |gift| %>
+<%= render 'form' %>
+
+<%# @gifts.each do |gift| %>
+  <p><%#= gift["title"] %></p>
+  <p><%#= link_to "Purchase on Etsy", gift["url"] %></p>
+
+  <p><img src="<%#= gift["MainImage"]["url_170x135"] %>"></a></p>
+<%# end %>
+
+<hr />
+
+<% @personalized_gifts.each do |gift| %>
   <p><%= gift["title"] %></p>
+  <p><%= link_to "Purchase on Etsy", gift["url"] %></p>
+
+  <p><img src="<%= gift["MainImage"]["url_170x135"] %>"></a></p>
 <% end %>

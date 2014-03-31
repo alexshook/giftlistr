@@ -1,0 +1,32 @@
+<%= form_tag("/gifts", method: "get") do %>
+
+Find a gift:
+
+  <%= select_tag(:q1, options_for_select([
+    ['one of the girls', "gifts+women"], ['one of the guys', "gifts+men"], ['coworker', 3], ['couple', 4], ['mother', 5], ['father', 6]
+    ])) %>
+
+  <%= select_tag(:q2, options_for_select([
+    ['fashionista', "fashion"], ['techie', 2], ['outdoorsy type', 3], ['loves vintage', 4], ['foodie', 5], ['art aficionado', 6], ['gadget collector', 7], ['home decorator', 8]
+    ])) %>
+
+<!-- is there an occasion? -->
+  <%= select_tag(:q3, options_for_select([
+    ['housewarming', "housewarming"], ['wedding', "wedding"], ['birthday', 3], ['holiday', 4], ['new baby', 5]
+    ])) %>
+
+<!-- get more specific - Likes: -->
+  <%= select_tag(:q4, options_for_select([
+    ['art', 1], ['photography', 2], ['jewelry', 3], ['clothing', 4], ['accessories', 5], ['tech accessories', 6], ['home and kitchen', 7]
+    ])) %>
+
+  <%= submit_tag %>
+<% end %>
+
+
+
+<!-- <form action="/search" method="get">
+  Search movies:
+  <input type="text" name="q">
+  <input type="submit">
+</form> -->
