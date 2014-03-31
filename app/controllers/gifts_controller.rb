@@ -9,7 +9,7 @@ class GiftsController < ApplicationController
   end
 
   def search
-    @personalized_results = Gift.gift_search params[:q]
+    @personalized_results = Gift.gift_search params[:q], params[:q2]
   end
 
 end
