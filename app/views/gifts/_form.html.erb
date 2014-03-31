@@ -3,11 +3,11 @@
 Find a gift:
 
   <%= select_tag(:q1, options_for_select([
-    ['one of the girls', "gifts+women"], ['one of the guys', "gifts+men"], ['coworker', 3], ['couple', 4], ['mother', 5], ['father', 6]
+    ['one of the girls', "gifts+women"], ['one of the guys', "gifts+men"], ['coworker', "gifts+coworker"], ['couple', "gifts+couples"], ['mother', "gifts+mother"], ['father', "gifts+father"]
     ])) %>
 
   <%= select_tag(:q2, options_for_select([
-    ['fashionista', "fashion"], ['techie', 2], ['outdoorsy type', 3], ['loves vintage', 4], ['foodie', 5], ['art aficionado', 6], ['gadget collector', 7], ['home decorator', 8]
+    ['fashionista', "fashion+style"], ['techie', "tech+technology"], ['outdoorsy type', "outdoorsy"], ['loves vintage', "vintage"], ['foodie', 5], ['art aficionado', 6], ['gadget collector', 7], ['home decorator', 8]
     ])) %>
 
 <!-- is there an occasion? -->
@@ -22,11 +22,3 @@ Find a gift:
 
   <%= submit_tag %>
 <% end %>
-
-
-
-<!-- <form action="/search" method="get">
-  Search movies:
-  <input type="text" name="q">
-  <input type="submit">
-</form> -->
