@@ -1,10 +1,5 @@
 <%= render 'form' %>
 
 <% @gifts.each do |gift| %>
-  <p><%= gift["title"] %></p>
-  <p><%= link_to "Purchase on Etsy", gift["url"] %></p>
-  <p>Add to Giftlist</p>
-  <p><%#= link_to "Add to Giftlist," %></p>
-
-  <p><img src="<%= gift["MainImage"]["url_170x135"] %>"></a></p>
+  <h4><%= link_to gift.name, gift %></h4>
 <% end %>

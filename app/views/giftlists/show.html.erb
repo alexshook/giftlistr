@@ -1,3 +1,10 @@
 <h1><%= @giftlist.name %></h1>
 
 <p>Gift recipient: <%= @giftlist.giftee %></p>
+
+<%= @giftlist.id %>
+
+<%= @giftlist.gifts.each do |gift| %>
+  <p><%= gift.name %></p>
+<% end %>
+

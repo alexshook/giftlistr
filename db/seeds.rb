@@ -6,4 +6,41 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# u1 = User.create(email: Faker::Internet.email, first_name: Faker::Name.name, last_name: Faker::Name.name)
+# users = User.create([
+# {
+#   email: Faker::Internet.email,
+#   first_name: Faker::Name.first_name,
+#   last_name: Faker::Name.last_name,
+# },
+# {
+#   email: Faker::Internet.email,
+#   first_name: Faker::Name.first_name,
+#   last_name: Faker::Name.last_name,
+# },
+# {
+#   email: Faker::Internet.email,
+#   first_name: Faker::Name.first_name,
+#   last_name: Faker::Name.last_name,
+# }
+#   ])
+
+
+# gifts = Gift.create([
+#   {
+#   name: Faker::Product.product_name,
+#   price: 10,
+#   category: Faker::HipsterIpsum.word,
+#   giftlist_id: 1
+# },
+#   {
+#   name: Faker::Product.product_name,
+#   price: 10,
+#   category: Faker::HipsterIpsum.word,
+#   giftlist_id: 1
+# },   {
+#   name: Faker::Product.product_name,
+#   price: 10,
+#   category: Faker::HipsterIpsum.word,
+#   giftlist_id: 1
+# }
+#   ])
