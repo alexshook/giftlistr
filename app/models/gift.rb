@@ -4,7 +4,7 @@ class Gift < ActiveRecord::Base
 
   # @@etsy_url = "https://openapi.etsy.com/v2/listings/active?api_key="+"#{ENV['ETSY_KEYSTRING']}"+"&fields=title,price,tags,url,category_path&limit=50&includes=MainImage&search?q="
 
-  @@etsy_url = "https://openapi.etsy.com/v2/listings/api_key="+"#{ENV['ETSY_KEYSTRING']}"+"&limit=50&includes=MainImage&search?q="
+  @@etsy_url = "https://openapi.etsy.com/v2/listings/active?api_key="+"#{ENV['ETSY_KEYSTRING']}"+"&limit=25&includes=MainImage&search?q="
 
   def self.gift_search(q, q2)
     query = q.split.join("+")

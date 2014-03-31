@@ -21,9 +21,8 @@ class GiftsController < ApplicationController
   end
 
   def search
-    @personalized_results = Gift.gift_search params[:q], params[:q2]
+    @personalized_results = Gift.gift_search(params[:q], params[:q2])
     # p @personalized_results
     # render :search
   end
-
 end
