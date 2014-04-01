@@ -1,20 +1,36 @@
 class TagsController < ApplicationController
 
+  def index
+    @tags = Tag.all
+  end
+
+  def show
+    @tag = Tag.find params[:id]
+  end
+
   def new
     @tag = Tag.new
+    @tags = Tag.all
+    @gifts = Gift.all
   end
 
   def create
+    # @gift = Gift.find params[:gift]
     @tag = Tag.new tag_params
-    if @tag.save
-      redirect_to @tag
-    else
-      render 'new'
-    end
+    @tags = Tag.all
+    @gifts = Gift.all
+    @tag.save
+
+    render 'new'
+  end
+
+  def edit
+    @tag = Tag.find params[:id]
   end
 
   private
   def tag_params
     params.require(:tag).permit(:name, :gift_id)
+  end
 
 end

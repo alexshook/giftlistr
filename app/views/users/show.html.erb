@@ -1,8 +1,10 @@
-<h1><%= @user.first_name %></h1>
+<h1><%= @user.first_name %> <%= @user.last_name %></h1>
 
 <div><%= @user.email %></div>
 
 <% @user.giftlists.each do |g| %>
-  <%= link_to g.name, g %>
+  <ul>
+    <li><%= link_to g.name, g %></li>
+  </ul>
 
 <% end %>

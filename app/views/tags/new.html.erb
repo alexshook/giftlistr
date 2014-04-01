@@ -1,2 +1,15 @@
 <h1>New Tag</h1>
 
+<!-- this is probably better as an admin function add specific tag to specific gift -->
+
+<h2>Create New Tag</h2>
+  <%= render 'form' %>
+
+<h3>Add a Tag to a Gift</h3>
+<%= form_tag "/gifts/add_tag" do %>
+  <%= label_tag "Select Tag:" %>
+  <%= select_tag "tag", options_from_collection_for_select(@tags, "id", "name") %>
+  <%= label_tag "Select Gift:" %>
+  <%= select_tag "gift", options_from_collection_for_select(@gifts, "id", "name") %>
+  <%= submit_tag "Add Tag to Gift" %>
+<% end %>

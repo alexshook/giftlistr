@@ -1,6 +1,8 @@
 <h1>Giftlists Index</h1>
 
 <% @giftlists.each do |g| %>
-  <%= link_to g.name, g %>
+  <ul>
+    <li><%= link_to g.name, g %></li>
+  </ul>
 
 <% end %>

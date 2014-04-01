@@ -1,4 +1,8 @@
-<%= render 'form' %>
+<h4>
+  <% @tags.each do |tag| %>
+  <%= link_to tag.name, tag %>
+<% end %>
+</h4>
 
 <p>All Gifts:</p>
 <% @gifts.each do |gift| %>

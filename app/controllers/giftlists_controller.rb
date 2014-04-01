@@ -38,19 +38,14 @@ class GiftlistsController < ApplicationController
   def destroy
     @giftlist = Giftlist.find params[:id]
     @giftlist.destroy
-    redirect_to user_giftlists_path
+    redirect_to user_giftlists_path(current_user.id)
   end
 
   def add
     @giftlist = Giftlist.find params[:giftlist]
     @gift = Gift.find params[:gift]
+    @giftlist.add_to_giftlist(@gift)
 
-    #set up flash notices
-    if @giftlist.add_to_giftlist(@gift)
-      "Gift added!"
-    else
-      "Sorry, something went wrong."
-    end
     redirect_to @gift
   end
 

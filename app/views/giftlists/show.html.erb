@@ -4,10 +4,10 @@
 
 <p><%= @giftlist.note %></p>
 
-<%= @giftlist.id %>
-
 <% @giftlist.gifts.each do |gift| %>
-  <p><%= gift.name %></p>
+  <ul>
+    <li><%= link_to gift.name, gift %></li>
+  </ul>
 <% end %>
 
 <p><%= link_to "Edit Giftlist", edit_giftlist_path(@giftlist) %></p>

@@ -1,4 +1,6 @@
 <h1>User Index</h1>
 <% @users.each do |u| %>
-  <%= link_to u.email, u %>
+  <ul>
+    <li><%= link_to u.email, u %></li>
+  </ul>
 <% end %>
