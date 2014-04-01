@@ -15,7 +15,6 @@ class TagsController < ApplicationController
   end
 
   def create
-    # @gift = Gift.find params[:gift]
     @tag = Tag.new tag_params
     @tags = Tag.all
     @gifts = Gift.all

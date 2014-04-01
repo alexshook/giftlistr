@@ -11,6 +11,11 @@ class GiftlistsController < ApplicationController
 
   def show
     @giftlist = Giftlist.find params[:id]
+    if current_user.id == @giftlist.user_id
+      render 'show'
+    else
+      redirect_to root_path
+    end
   end
 
   def create
