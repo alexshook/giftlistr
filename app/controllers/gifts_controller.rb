@@ -7,6 +7,7 @@ class GiftsController < ApplicationController
 
   def show
     @gift = Gift.find params[:id]
+    @giftlists = current_user.giftlists
   end
 
 #do i actually need a new and save?

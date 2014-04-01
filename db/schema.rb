@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140331200612) do
+ActiveRecord::Schema.define(version: 20140401013400) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,10 +20,10 @@ ActiveRecord::Schema.define(version: 20140331200612) do
     t.string  "name"
     t.string  "note"
     t.string  "giftee"
-    t.integer "user_id_id"
+    t.integer "user_id"
   end
 
-  add_index "giftlists", ["user_id_id"], name: "index_giftlists_on_user_id_id", using: :btree
+  add_index "giftlists", ["user_id"], name: "index_giftlists_on_user_id", using: :btree
 
   create_table "giftlists_gifts", id: false, force: true do |t|
     t.integer "giftlist_id"

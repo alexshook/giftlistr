@@ -6,7 +6,8 @@ class GiftlistsController < ApplicationController
   end
 
   def new
-    @giftlist = Giftlist.new
+    @user = current_user
+    @giftlist = @user.giftlists.new
   end
 
   def show
@@ -14,7 +15,8 @@ class GiftlistsController < ApplicationController
   end
 
   def create
-    @giftlist = Giftlist.new giftlist_params
+    @user = current_user
+    @giftlist = @user.giftlists.new giftlist_params
     if @giftlist.save
       redirect_to @giftlist
     else
@@ -38,7 +40,20 @@ class GiftlistsController < ApplicationController
   def destroy
     @giftlist = Giftlist.find params[:id]
     @giftlist.destroy
-    redirect_to giftlists_path
+    redirect_to user_giftlists_path
+  end
+
+  def add
+    @giftlist = Giftlist.find params[:giftlist]
+    @gift = Gift.find params[:gift]
+
+    #set up flash notices
+    if @giftlist.add_to_giftlist(@gift)
+      "Gift added!"
+    else
+      "Sorry, something went wrong."
+    end
+    redirect_to @gift
   end
 
   private

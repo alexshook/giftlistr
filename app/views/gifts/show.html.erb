@@ -3,3 +3,9 @@
     <li>$<%= @gift.price %></li>
     <li>Category: <%= @gift.category %></li>
   </ul>
+
+<%= form_tag "/giftlists/add" do %>
+  <%= select_tag "giftlist", options_from_collection_for_select(@giftlists, "id", "name") %>
+  <%= hidden_field_tag "gift", @gift.id %>
+  <%= submit_tag "Add to Giftlist" %>
+<% end %>

@@ -11,6 +11,8 @@ Giftlistr::Application.routes.draw do
     resources :giftlists, shallow: true
   end
 
+  post '/giftlists/add', to: 'giftlists#add'
+
   # resources :gifts
 
   resources :gifts do
@@ -18,7 +20,5 @@ Giftlistr::Application.routes.draw do
       get 'search'
     end
   end
-
-  # get '/gifts/search', to: "gifts#search"
 
 end
