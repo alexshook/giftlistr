@@ -1,5 +1,6 @@
 <%= render 'form' %>
 
+<p>All Gifts:</p>
 <% @gifts.each do |gift| %>
   <h4><%= link_to gift.name, gift %></h4>
 <% end %>

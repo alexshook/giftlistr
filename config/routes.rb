@@ -21,4 +21,8 @@ Giftlistr::Application.routes.draw do
     end
   end
 
+  resources :tags
+
+  post '/gifts/add_tag', to: 'gifts#add_tag'
+
 end

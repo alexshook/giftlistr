@@ -1,3 +1,10 @@
 <h1>New Giftlist</h1>
 
-<%= render 'form' %>
+<%= simple_form_for [current_user, @giftlist] do |f| %>
+
+  <%= f.input :name %>
+  <%= f.input :note %>
+  <%= f.input :giftee, label: "Who is this list for?" %>
+  <%= f.button :submit %>
+
+<% end %>

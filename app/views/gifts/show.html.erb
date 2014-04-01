@@ -9,3 +9,18 @@
   <%= hidden_field_tag "gift", @gift.id %>
   <%= submit_tag "Add to Giftlist" %>
 <% end %>
+
+<h2>Tags</h2>
+
+<% @gift.tags.each do |tag| %>
+  <ul>
+    <li><%= tag.name %></li>
+  </ul>
+<% end %>
+
+
+ <%= form_tag "/gifts/add_tag" do %>
+  <%= select_tag "tag", options_from_collection_for_select(@tags, "id", "name") %>
+  <%= hidden_field_tag "gift", @gift.id %>
+  <%= submit_tag "Add Tag to Gift" %>
+<% end %>

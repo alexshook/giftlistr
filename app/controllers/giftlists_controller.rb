@@ -6,8 +6,7 @@ class GiftlistsController < ApplicationController
   end
 
   def new
-    @user = current_user
-    @giftlist = @user.giftlists.new
+    @giftlist = current_user.giftlists.new
   end
 
   def show
@@ -15,8 +14,7 @@ class GiftlistsController < ApplicationController
   end
 
   def create
-    @user = current_user
-    @giftlist = @user.giftlists.new giftlist_params
+    @giftlist = current_user.giftlists.new giftlist_params
     if @giftlist.save
       redirect_to @giftlist
     else

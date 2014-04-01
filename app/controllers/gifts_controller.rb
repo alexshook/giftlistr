@@ -8,6 +8,7 @@ class GiftsController < ApplicationController
   def show
     @gift = Gift.find params[:id]
     @giftlists = current_user.giftlists
+    @tags = @gift.tags
   end
 
 #do i actually need a new and save?
@@ -36,9 +37,11 @@ class GiftsController < ApplicationController
 
   end
 
-  # def search
-  #   @personalized_results = Gift.gift_search(params[:q], params[:q2])
-  #   # p @personalized_results
-  #   # render :search
-  # end
+  def add_tag
+    @gift = Gift.find params[:gift]
+    @tag = Tag.find params[:tag]
+
+    @gift.add_tag(@tag)
+  end
+
 end

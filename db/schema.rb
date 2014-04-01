@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140401013400) do
+ActiveRecord::Schema.define(version: 20140401175658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,9 +35,23 @@ ActiveRecord::Schema.define(version: 20140401013400) do
     t.integer "price"
     t.string  "category"
     t.integer "giftlist_id"
+    t.integer "tag_id"
   end
 
   add_index "gifts", ["giftlist_id"], name: "index_gifts_on_giftlist_id", using: :btree
+  add_index "gifts", ["tag_id"], name: "index_gifts_on_tag_id", using: :btree
+
+  create_table "gifts_tags", id: false, force: true do |t|
+    t.integer "gift_id"
+    t.integer "tag_id"
+  end
+
+  create_table "tags", force: true do |t|
+    t.string  "name"
+    t.integer "gift_id"
+  end
+
+  add_index "tags", ["gift_id"], name: "index_tags_on_gift_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string "email"
