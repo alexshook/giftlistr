@@ -14,7 +14,7 @@ class GiftlistsController < ApplicationController
     if current_user.id == @giftlist.user_id
       render 'show'
     else
-      redirect_to root_path
+      redirect_to user_giftlists_path(current_user.id)
     end
   end
 

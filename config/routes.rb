@@ -1,5 +1,5 @@
 Giftlistr::Application.routes.draw do
-  root to: 'users#index'
+  root to: 'pages#index'
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

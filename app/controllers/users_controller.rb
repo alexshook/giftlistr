@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   before_action :authenticate, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -15,7 +14,7 @@ class UsersController < ApplicationController
     if current_user == @user
       render 'show'
     else
-      redirect_to root_path
+      redirect_to users_path
     end
   end
 

@@ -1,4 +1,5 @@
 class TagsController < ApplicationController
+  before_action :authenticate, except: [:index]
 
   def index
     @tags = Tag.all

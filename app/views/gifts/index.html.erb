@@ -1,10 +1,10 @@
-<h4>
+<h3>Search gifts by tag: </h3>
   <% @tags.each do |tag| %>
-  <%= link_to tag.name, tag %>
+  <%= link_to tag.name, tag %> |
 <% end %>
-</h4>
 
-<p>All Gifts:</p>
+
+<h4>All Gifts:</h4>
 <% @gifts.each do |gift| %>
   <h4><%= link_to gift.name, gift %></h4>
 <% end %>
