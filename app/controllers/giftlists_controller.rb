@@ -49,9 +49,13 @@ class GiftlistsController < ApplicationController
   def add
     @giftlist = Giftlist.find params[:giftlist]
     @gift = Gift.find params[:gift]
-    @giftlist.add_to_giftlist(@gift)
-
-    redirect_to @gift
+    if @giftlist.add_to_giftlist(@gift)
+      flash[:notice] = "Gift added!"
+      redirect_to @gift
+    else
+      flash[:notice] = "Sorry, try that again."
+      render 'new'
+    end
   end
 
   private

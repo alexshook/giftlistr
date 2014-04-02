@@ -2,6 +2,10 @@
 
 <!-- this is probably better as an admin function add specific tag to specific gift -->
 
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
 <h2>Create New Tag</h2>
   <%= render 'form' %>
 

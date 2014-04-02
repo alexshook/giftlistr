@@ -19,9 +19,13 @@ class TagsController < ApplicationController
     @tag = Tag.new tag_params
     @tags = Tag.all
     @gifts = Gift.all
-    @tag.save
-
+    if @tag.save
+      flash[:notice] = "Tag created!"
+      render 'new'
+    else
+      flash[:notice] = "Sorry, try again."
     render 'new'
+    end
   end
 
   def edit
