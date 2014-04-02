@@ -47,6 +47,14 @@ class UsersController < ApplicationController
     redirect_to users_index
   end
 
+  def add_friend
+    @user = current_user.id
+    @other_user = User.find params[:id]
+    @user.add_friend(@other_user)
+
+    redirect_to users_index
+  end
+
   private
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :birthday, :password_digest, :password, :password_confirmation)

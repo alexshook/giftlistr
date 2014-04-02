@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :giftlists
 
   has_many :relationships, foreign_key: 'friend_id', dependent: :destroy
-  has_many :other_friends, through: :relationships
+  has_many :other_friends, through: :relationships, source: :other_friend_id
 
   def add_friend(other_user)
     self.relationships.create!(other_friend_id: other_user.id)
