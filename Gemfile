@@ -54,13 +54,8 @@ group :development do
 end
 
 gem 'puma'
-
 gem 'simple_form'
-
 gem 'mail_form'
-
 gem 'ffaker'
-
 gem 'pry-rails'
-
 gem 'httparty'
