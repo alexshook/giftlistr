@@ -37,6 +37,12 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    devise (3.2.4)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     diff-lcs (1.2.5)
     dotenv (0.10.0)
     dotenv-rails (0.10.0)
@@ -49,6 +55,7 @@ GEM
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
     ffaker (1.23.0)
+    hashie (1.2.0)
     hike (1.2.3)
     httparty (0.13.0)
       json (~> 1.8)
@@ -72,6 +79,10 @@ GEM
     minitest (4.7.5)
     multi_json (1.9.2)
     multi_xml (0.5.5)
+    omniauth (1.0.3)
+      hashie (~> 1.2)
+      rack
+    orm_adapter (0.5.0)
     pg (0.17.1)
     polyglot (0.3.4)
     pry (0.9.12.6)
@@ -161,6 +172,8 @@ GEM
     uglifier (2.5.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    warden (1.2.3)
+      rack (>= 1.0)
 
 PLATFORMS
   ruby
@@ -168,6 +181,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   coffee-rails (~> 4.0.0)
+  devise
   dotenv-rails
   factory_girl_rails
   ffaker
@@ -175,6 +189,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   mail_form
+  omniauth (~> 1.0.0)
   pg
   pry-rails
   puma
