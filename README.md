@@ -37,7 +37,12 @@
   <li>As a logged in user, I should be able to add gifts to giftlists and specify if they're for a particular person so that I can easily keep track of more than one gift idea per person.</li>
   <li>As a logged in user, I should be able to search for gifts by tags so that I can more easily navigate the gifts available on the site.</li>
   <li>As a user, I should be able to browse products by tag without logging in so that I can get an idea of what the site is about before signing up.</li>
-  ### Backlog
+</ol>
+
+<br>
+
+### Backlog
+<ol>
   <li>As a user, I should be able to sort through gifts by price and category so that they're easier to find.</li>
   <li>As a logged in user, I should be able to edit my user profile so that I can have a good social sharing experience with other users on the site. </li>
   <li>As a logged in user, I should be able to anonymously message my friends so that I can ask them about gifts they want for upcoming birthdays, holidays, etc.</li>

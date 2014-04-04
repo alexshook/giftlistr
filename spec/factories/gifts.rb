@@ -5,5 +5,6 @@ FactoryGirl.define do
     f.name {Faker::Product.product_name}
     f.price 10
     f.category {Faker::HipsterIpsum.word}
+    # f.association :tag
   end
 end
