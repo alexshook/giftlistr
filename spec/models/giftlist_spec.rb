@@ -10,7 +10,17 @@ describe Giftlist do
   end
 
   describe ".add_to_giftlist(gift)" do
- # add_to_giftlist(gift)
+    it "should have a giftlist that has a gift" do
+      giftlist = Giftlist.create(name: "new list")
+      gift = Gift.create(name: "new gift")
+      giftlist.add_to_giftlist(gift)
+      g = Giftlist.find_by(name: "new list").gifts
+      expect(g.include?("new gift")).to_not be_nil
+      gift.destroy
+      giftlist.destroy
+    end
   end
 
 end
+
+
