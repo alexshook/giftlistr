@@ -11,17 +11,15 @@ describe Gift do
   end
 
 # .add_tag is totally failing and I don't why
-  describe ".add_tag" do
-    it "should have tags when added" do
-      gift = Gift.create(name: "new gift")
-      tag = Tag.new(name: "tagged")
-      tag.save
-      gift.add_tag(tag)
-      g = Gift.find_by(name: "new gift").tags
-      expect(g.include?("tagged")).to_not be_nil
-      tag.destroy
-      gift.destroy
-    end
+  it "should have tags when added" do
+    gift = Gift.create(name: "new gift")
+    tag = Tag.new(name: "tagged")
+    tag.save
+    gift.add_tag(tag)
+    g = Gift.find_by(name: "new gift").tags
+    expect(g.include?("tagged")).to be_true
+    tag.destroy
+    gift.destroy
   end
 
 end
