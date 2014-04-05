@@ -1,7 +1,8 @@
 Giftlistr::Application.routes.draw do
 
   root to: 'pages#index'
-  devise_for :users
+  devise_for :users, controllers: { registrations: "users/registrations" }
+
   devise_for :admins
 
   # get '/login', to: 'sessions#new'
@@ -10,7 +11,7 @@ Giftlistr::Application.routes.draw do
 
   # get '/signup', to: 'users#new'
 
-  resources :users do
+  resources :users, only: [:index, :show] do
     resources :giftlists, shallow: true
   end
 

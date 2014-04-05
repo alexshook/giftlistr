@@ -1,8 +1,6 @@
 source 'https://rubygems.org'
 ruby "2.1.0"
 
-gem 'rake', '10.2.1'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
 
@@ -68,3 +66,6 @@ gem 'pry-rails'
 gem 'httparty'
 gem 'devise'
 gem 'omniauth', '~> 1.0.0'
+gem 'paperclip'
+gem 'rmagick'
+gem 'aws-sdk'
