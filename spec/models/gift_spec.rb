@@ -10,7 +10,7 @@ describe Gift do
     expect(create(:gift, name: Faker::Product.product_name)).to_not be_nil
   end
 
-# .add_tag is totally failing and I don't why
+# FIXME .add_tag test is totally failing and I don't why
   it "should have tags when added" do
     gift = Gift.create(name: "new gift")
     tag = Tag.new(name: "tagged")
