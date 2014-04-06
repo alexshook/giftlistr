@@ -3,9 +3,8 @@
   <%= f.input :name %>
   <%= f.input :price %>
   <%= f.input :category %>
-
-  <!-- which giftlist? -->
-  <!-- also need etsy listing url -->
+  <% #FIXME tags aren't passing through this form, something's up with what I'm setting in strong parameters %>
+  <%= f.association :tags, as: :check_boxes %>
 
   <%= f.submit %>
 

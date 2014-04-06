@@ -11,13 +11,25 @@ class GiftsController < ApplicationController
     @giftlists = current_user.giftlists
   end
 
+  def new
+    @gift = Gift.new
+  end
+
+  def create
+    @gift = Gift.create gift_params
+    redirect_to @gift
+  end
+
   def add_tag
     @gift = Gift.find params[:gift]
     @tag = Tag.find params[:tag]
 
     @gift.add_tag(@tag)
+  end
 
-    redirect_to @gift
+  private
+  def gift_params
+    params.require(:gift).permit(:name, :price, :category, tags: {})
   end
 
 end
