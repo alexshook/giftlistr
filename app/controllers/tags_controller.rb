@@ -23,13 +23,31 @@ class TagsController < ApplicationController
       flash[:notice] = "Tag created!"
       render 'new'
     else
-      flash[:notice] = "Sorry, try again."
+      flash[:notice] = "Sorry, try that again."
     render 'new'
     end
   end
 
   def edit
     @tag = Tag.find params[:id]
+  end
+
+  def update
+    @tag = Tag.find params[:id]
+    if @tag.save
+      flash[:notice] = "Tag updated!"
+      render 'new'
+    else
+      flash[:notice] = "Sorry, try that again."
+    render 'edit'
+    end
+  end
+
+  def destroy
+    @tag = Tag.find params[:id]
+    @tag.destroy
+    flash[:notice] = "Tag deleted!"
+    render 'new'
   end
 
   private
