@@ -29,7 +29,8 @@ class GiftsController < ApplicationController
 
   private
   def gift_params
-    params.require(:gift).permit(:name, :price, :category, tags: {})
+  # FIXME tag_id, tags: {}, tags: [] don't allow tags through, explore further
+    params.require(:gift).permit(:name, :price, :category, :tag_id)
   end
 
 end
