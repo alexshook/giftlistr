@@ -28,11 +28,11 @@ class GiftlistsController < ApplicationController
   end
 
   def edit
-    @giftlist = Giftlist.find params[:id]
+    @giftlist = current_user.giftlists.find params[:id]
   end
 
   def update
-    @giftlist = Giftlist.find params[:id]
+    @giftlist = current_user.giftlists.find params[:id]
     if @giftlist.update giftlist_params
       redirect_to @giftlist
     else
