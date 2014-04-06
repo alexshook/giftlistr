@@ -4,31 +4,32 @@
 
 ### Unique gift ideas based on lifestyle.
 
-<p>Giftlister recommends unique gifts for the hard-to-buy-for people in your life. Anyone can browse giftlistr's product listings by category, but users with accounts have access to giftlists where they can save gift ideas for a specific person.</p>
+Giftlister recommends unique gifts for the hard-to-buy-for people in your life. Anyone can browse giftlistr's product listings by category, but users with accounts have access to giftlists where they can save gift ideas for a specific person.
 
-<p>Next I want to connect the Facebook Graph API and use the data on a user's friends list to return gift recommendations.</p>
+Next I want to connect the Facebook Graph API and use the data on a user's friends list to return gift recommendations.
 
-<br>
+
 
 ## Links
-<ul>
-  <li>[Pivotal Tracker User Stories](https://www.pivotaltracker.com/s/projects/1047136)</li>
-  <li>[ERD (photo)](http://i.imgur.com/mJn0t0X.jpg)</li>
-  <li>[giftlistr on heroku](http://afternoon-castle-3081.herokuapp.com/)</li>
-</ul>
 
-<br>
+* [Pivotal Tracker User Stories](https://www.pivotaltracker.com/s/projects/1047136)
+* [ERD (photo)](http://i.imgur.com/mJn0t0X.jpg)
+* [giftlistr on heroku](http://afternoon-castle-3081.herokuapp.com/)
+
 
 ## Technologies
-<ol>
-  <li>[Simple Form](https://github.com/plataformatec/simple_form)</li>
-  <li>[ffaker](https://github.com/EmmanuelOga/ffaker)</li>
-  <li>[Factory Girl](https://github.com/thoughtbot/factory_girl_rails)</li>
-  <li>Rails</li>
-  <li>PostgreSQL</li>
-</ol>
 
-<br>
+* [Simple Form](https://github.com/plataformatec/simple_form)
+* [ffaker](https://github.com/EmmanuelOga/ffaker)
+* [Factory Girl](https://github.com/thoughtbot/factory_girl_rails)
+* [Devise](https://github.com/plataformatec/devise)
+* [Paperclip](https://github.com/thoughtbot/paperclip)
+* S3
+* Rails
+* PostgreSQL
+
+
+
 
 ## User Stories
 <ol>
@@ -39,7 +40,6 @@
   <li>As a user, I should be able to browse products by tag without logging in so that I can get an idea of what the site is about before signing up.</li>
 </ol>
 
-<br>
 
 ### Backlog
 <ol>
