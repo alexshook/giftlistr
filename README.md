@@ -14,7 +14,7 @@ Next I want to connect the Facebook Graph API and use the data on a user's frien
 
 * [Pivotal Tracker User Stories](https://www.pivotaltracker.com/s/projects/1047136)
 * [ERD (photo)](http://i.imgur.com/mJn0t0X.jpg)
-* [giftlistr on heroku](http://afternoon-castle-3081.herokuapp.com/)
+* [giftlistr on heroku (old version)](http://afternoon-castle-3081.herokuapp.com/)
 
 
 ## Technologies
@@ -48,3 +48,22 @@ Next I want to connect the Facebook Graph API and use the data on a user's frien
   <li>As a logged in user, I should be able to anonymously message my friends so that I can ask them about gifts they want for upcoming birthdays, holidays, etc.</li>
   <li>As an admin user, I should have special privileges like setting the featured gifts on the home page, the ability to message all users, the ability to delete products, etc.</li>
 </ol>
+
+
+### Changes
+* Added paperclip, S3, imagemagick
+* Some kind of S3 bucket error is happening, explore further
+* Reverted to a previous commit
+* Added devise for users and admins
+* Set custom controller for devise users
+* Modified filters to user decise helpers
+* Seeded (previously dropped database before adding devise)
+* DRYed up giftlists form with partial
+* Edited README
+* Added new and create actions for gifts (but not sure I want to keep them)
+* New way of displaying tags (checkboxes) but params are not being passed through so need to fix
+* Added update and destroy actions for tags
+* Added basic validations
+* Added delete button for tags
+* Minor changes to controllers
+* Edited note for rake notes
