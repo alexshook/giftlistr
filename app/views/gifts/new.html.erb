@@ -1,11 +1,3 @@
-<%= simple_form_for @gift do |f| %>
+<h2>Add a Gift</h2>
 
-  <%= f.input :name %>
-  <%= f.input :price %>
-  <%= f.input :category %>
-  <% #FIXME tags aren't passing through this form, something's up with what I'm setting in strong parameters %>
-  <%= f.association :tags, as: :check_boxes %>
-
-  <%= f.submit %>
-
-<% end %>
+<%= render 'form' %>

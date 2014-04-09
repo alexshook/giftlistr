@@ -1,12 +1,13 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-  def edit
-  end
+    before_action :authenticate_user!, except: [:index]
 
   def update
-    if resource.update user_params
+    #FIXME :avatar is not passing through
+    if @user.update user_params
+      flash[:notice] = "Your profile has been updated! "
       redirect_to @user
     else
-      flash[:notice] = "Sorry, try that again."
+      flash[:notice] = "Sorry, something went wrong. Try that again."
       render 'edit'
     end
   end

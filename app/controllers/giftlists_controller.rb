@@ -46,7 +46,6 @@ class GiftlistsController < ApplicationController
     redirect_to user_giftlists_path(current_user.id)
   end
 
-# TODO any way to make this shorter?
   def add
     @giftlist = Giftlist.find params[:giftlist]
     @gift = Gift.find params[:gift]

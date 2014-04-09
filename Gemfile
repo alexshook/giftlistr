@@ -48,6 +48,7 @@ gem 'bcrypt', '~> 3.1.7'
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
 end
 
 group :development do
@@ -66,6 +67,6 @@ gem 'pry-rails'
 gem 'httparty'
 gem 'devise'
 gem 'omniauth', '~> 1.0.0'
-gem 'paperclip'
-gem 'rmagick'
+gem 'paperclip', '~> 4.1'
+gem 'rmagick', '~> 2.13.2'
 gem 'aws-sdk'

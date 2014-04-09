@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:account_update) {|u| u.permit(:avatar, :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at)}
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:avatar, :email) }
   end
 
 end

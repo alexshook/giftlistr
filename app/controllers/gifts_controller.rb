@@ -1,5 +1,5 @@
 class GiftsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index]
 
   def index
     @gifts = Gift.all
@@ -20,6 +20,21 @@ class GiftsController < ApplicationController
     redirect_to @gift
   end
 
+  def edit
+    @gift = Gift.find params[:id]
+  end
+
+  def update
+    @gift = Gift.find params[:id]
+    if @gift.update gift_params
+      flash[:notice] = "Gift updated!"
+      redirect_to @gift
+    else
+      flash[:notice] = "Something went wrong. Try that again."
+      render 'edit'
+    end
+  end
+
   def add_tag
     @gift = Gift.find params[:gift]
     @tag = Tag.find params[:tag]
@@ -29,8 +44,7 @@ class GiftsController < ApplicationController
 
   private
   def gift_params
-  # FIXME tag_id, tags: {}, tags: [] don't allow tags through, explore further
-    params.require(:gift).permit(:name, :price, :category, :tag_id)
+    params.require(:gift).permit(:name, :price, :category, tag_ids:[])
   end
 
 end
