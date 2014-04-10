@@ -9,15 +9,21 @@
 <% #FIXME need to check s3, etc. 404 on images %>
     <%= f.input :avatar %>
 
-    <%= f.input :email, required: true, autofocus: true %>
+    <% if resource.email.present? %>
+      <%= f.input :email, required: true, autofocus: true %>
+    <% else %>
+      <%= f.input :email, required: false %>
+    <% end %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
-    <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
-    <%= f.input :password_confirmation, required: false %>
-    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+    <% if resource.encrypted_password.present? %>
+      <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
+      <%= f.input :password_confirmation, required: false %>
+      <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+    <% end %>
   </div>
 
   <div class="form-actions">
