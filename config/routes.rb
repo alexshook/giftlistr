@@ -3,7 +3,7 @@ Giftlistr::Application.routes.draw do
   root to: 'pages#index'
 
   devise_for :admins
-  devise_for :users, controllers: { registrations: "users/registrations" }
+  devise_for :users, controllers: { registrations: "users/registrations", omniauth_callbacks: "omniauth_callbacks" }
   resources :users, only: [:index, :show] do
     resources :giftlists, shallow: true
   end

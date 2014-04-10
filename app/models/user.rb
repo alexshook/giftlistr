@@ -12,4 +12,11 @@ class User < ActiveRecord::Base
   has_many :giftlists
   has_many :gifts
 
+  def self.sign_in_omniauth(auth)
+    where(auth.slice(:provider, :uid)).first_or_create do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+    end
+  end
+
 end
