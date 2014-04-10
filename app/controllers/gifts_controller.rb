@@ -4,6 +4,7 @@ class GiftsController < ApplicationController
   def index
     @gifts = Gift.all
     @tags = Tag.all
+    @user = current_user
   end
 
   def show
@@ -41,6 +42,16 @@ class GiftsController < ApplicationController
 
     @gift.add_tag(@tag)
   end
+
+  def get_friends
+    @user = User.find params[:id]
+    @user.facebook_friends
+    redirect_to gifts_path
+  end
+
+      # ff = HTTParty.get("https://graph.facebook.com/me?fields=id,name,friends&access_token=#{@user.oauth_token}")
+
+
 
   private
   def gift_params

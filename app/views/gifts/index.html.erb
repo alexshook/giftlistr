@@ -1,3 +1,5 @@
+<%= @user.facebook_friends %>
+
 <h3>Search gifts by tag: </h3>
   <% @tags.each do |tag| %>
   <%= link_to tag.name, tag %> |
@@ -8,3 +10,5 @@
 <% @gifts.each do |gift| %>
   <h4><%= link_to gift.name, gift %></h4>
 <% end %>
+
+<% #TODO ask for more permissions for scope? , birthday, read_stream, read_friendlists, friends_likes, friends_stats, offline_access' %>
