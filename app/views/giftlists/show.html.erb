@@ -10,4 +10,4 @@
   </ul>
 <% end %>
 
-<p><%= link_to "Edit Giftlist", edit_giftlist_path(@giftlist) %></p>
+<div class="show-buttons"><%= button_to "Edit Giftlist", edit_giftlist_path(@giftlist), method: 'get' %> <%= button_to "Delete Giftlist", giftlist_path(@giftlist), method: 'delete' %></div>

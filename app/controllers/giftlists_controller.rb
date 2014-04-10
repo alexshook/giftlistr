@@ -1,5 +1,5 @@
 class GiftlistsController < ApplicationController
-  before_action :authenticate, except: [:index]
+  before_action :authenticate_user!, except: [:index]
 
   def index
     @giftlists = Giftlist.all
@@ -28,11 +28,11 @@ class GiftlistsController < ApplicationController
   end
 
   def edit
-    @giftlist = Giftlist.find params[:id]
+    @giftlist = current_user.giftlists.find params[:id]
   end
 
   def update
-    @giftlist = Giftlist.find params[:id]
+    @giftlist = current_user.giftlists.find params[:id]
     if @giftlist.update giftlist_params
       redirect_to @giftlist
     else

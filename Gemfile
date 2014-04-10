@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 ruby "2.1.0"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
 
@@ -47,6 +48,7 @@ gem 'bcrypt', '~> 3.1.7'
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
 end
 
 group :development do
@@ -63,3 +65,9 @@ gem 'mail_form'
 gem 'ffaker'
 gem 'pry-rails'
 gem 'httparty'
+gem 'devise'
+gem 'omniauth', '~> 1.0.0'
+gem 'omniauth-facebook'
+gem 'paperclip', '~> 4.1'
+gem 'rmagick', '~> 2.13.2'
+gem 'aws-sdk'

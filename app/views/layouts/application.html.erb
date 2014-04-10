@@ -7,11 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if current_user %>
-    <div><%= link_to "Home", root_path %> | <%= link_to "User Index", users_path %> | <%= link_to "Gift Index", gifts_path %> | <%= link_to "Giftlists", user_giftlists_path(current_user.id) %> | <%= link_to "New Giftlist", new_user_giftlist_path(current_user.id) %> | <%= link_to "Tag Index", tags_path %> | <%= link_to "New Tag", new_tag_path %></div>
-  <% else %>
-    <%= link_to "Sign Up", new_user_path %> | <%= link_to "Log In", login_path %>
-  <% end %>
+<%= render 'layouts/nav' %>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
 <%= yield %>
 

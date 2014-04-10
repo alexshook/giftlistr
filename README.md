@@ -4,31 +4,32 @@
 
 ### Unique gift ideas based on lifestyle.
 
-<p>Giftlister recommends unique gifts for the hard-to-buy-for people in your life. Anyone can browse giftlistr's product listings by category, but users with accounts have access to giftlists where they can save gift ideas for a specific person.</p>
+Giftlister recommends unique gifts for the hard-to-buy-for people in your life. Anyone can browse giftlistr's product listings by category, but users with accounts have access to giftlists where they can save gift ideas for a specific person.
 
-<p>Next I want to connect the Facebook Graph API and use the data on a user's friends list to return gift recommendations.</p>
+Next I want to connect the Facebook Graph API and use the data on a user's friends list to return gift recommendations.
 
-<br>
+
 
 ## Links
-<ul>
-  <li>[Pivotal Tracker User Stories](https://www.pivotaltracker.com/s/projects/1047136)</li>
-  <li>[ERD (photo)](http://i.imgur.com/mJn0t0X.jpg)</li>
-  <li>[giftlistr on heroku](http://afternoon-castle-3081.herokuapp.com/)</li>
-</ul>
 
-<br>
+* [Pivotal Tracker User Stories](https://www.pivotaltracker.com/s/projects/1047136)
+* [ERD (photo)](http://i.imgur.com/mJn0t0X.jpg)
+* [giftlistr on heroku (old version)](http://afternoon-castle-3081.herokuapp.com/)
+
 
 ## Technologies
-<ol>
-  <li>[Simple Form](https://github.com/plataformatec/simple_form)</li>
-  <li>[ffaker](https://github.com/EmmanuelOga/ffaker)</li>
-  <li>[Factory Girl](https://github.com/thoughtbot/factory_girl_rails)</li>
-  <li>Rails</li>
-  <li>PostgreSQL</li>
-</ol>
 
-<br>
+* [Simple Form](https://github.com/plataformatec/simple_form)
+* [ffaker](https://github.com/EmmanuelOga/ffaker)
+* [Factory Girl](https://github.com/thoughtbot/factory_girl_rails)
+* [Devise](https://github.com/plataformatec/devise)
+* [Paperclip](https://github.com/thoughtbot/paperclip)
+* S3
+* Rails
+* PostgreSQL
+
+
+
 
 ## User Stories
 <ol>
@@ -39,7 +40,6 @@
   <li>As a user, I should be able to browse products by tag without logging in so that I can get an idea of what the site is about before signing up.</li>
 </ol>
 
-<br>
 
 ### Backlog
 <ol>
@@ -48,3 +48,22 @@
   <li>As a logged in user, I should be able to anonymously message my friends so that I can ask them about gifts they want for upcoming birthdays, holidays, etc.</li>
   <li>As an admin user, I should have special privileges like setting the featured gifts on the home page, the ability to message all users, the ability to delete products, etc.</li>
 </ol>
+
+
+### Changes
+* Added paperclip, S3, imagemagick
+* Some kind of S3 bucket error is happening, explore further
+* Reverted to a previous commit
+* Added devise for users and admins
+* Set custom controller for devise users
+* Modified filters to user decise helpers
+* Seeded (previously dropped database before adding devise)
+* DRYed up giftlists form with partial
+* Edited README
+* Added new and create actions for gifts (but not sure I want to keep them)
+* New way of displaying tags (checkboxes) but params are not being passed through so need to fix
+* Added update and destroy actions for tags
+* Added basic validations
+* Added delete button for tags
+* Minor changes to controllers
+* Edited note for rake notes

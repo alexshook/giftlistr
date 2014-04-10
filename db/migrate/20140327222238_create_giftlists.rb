@@ -4,7 +4,7 @@ class CreateGiftlists < ActiveRecord::Migration
       t.string :name
       t.string :note
       t.string :giftee
-      t.references :user_id, index: true
+      t.references :user, index: true
     end
   end
 end

@@ -4,10 +4,6 @@
     <li>Category: <%= @gift.category %></li>
   </ul>
 
-<% if flash[:notice] %>
-    <div class="notice"><%= flash[:notice] %></div>
-<% end %>
-
 <%= form_tag "/giftlists/add" do %>
   <%= select_tag "giftlist", options_from_collection_for_select(@giftlists, "id", "name") %>
   <%= hidden_field_tag "gift", @gift.id %>
