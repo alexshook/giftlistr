@@ -7,6 +7,8 @@ class GiftlistsController < ApplicationController
 
   def new
     @giftlist = current_user.giftlists.new
+    # path variable set to handle shallow nested resources in form
+    @path = [current_user, @giftlist]
   end
 
   def show
@@ -29,6 +31,7 @@ class GiftlistsController < ApplicationController
 
   def edit
     @giftlist = current_user.giftlists.find params[:id]
+    @path = @giftlist
   end
 
   def update

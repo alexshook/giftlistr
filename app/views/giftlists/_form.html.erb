@@ -1,4 +1,9 @@
-<%= f.input :name %>
-<%= f.input :note %>
-<%= f.input :giftee, label: "Who is this list for?" %>
-<%= f.button :submit %>
+<%= simple_form_for @path do |f| %>
+
+  <%= f.input :name %>
+  <%= f.input :note %>
+  <%= f.input :giftee, label: "Who is this list for?" %>
+  <%= f.button :submit %>
+
+<% end %>
+
