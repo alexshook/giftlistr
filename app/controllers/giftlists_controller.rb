@@ -1,5 +1,5 @@
 class GiftlistsController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!
 
   def index
     @giftlists = current_user.giftlists.all
