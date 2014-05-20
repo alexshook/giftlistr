@@ -1,13 +1,3 @@
-<% #FIXME clean up this hash %>
-<%#= @user.facebook_friends(@user) %>
-
-<% @friends.each do |friend| %>
-  <%= friend['friends'] %>
-  <%#= friend['friends']['data']['name'] %>
-<% end %>
-
-<!-- {"id":"9505535","name":"Alexandra Shook","friends":{"data":[{"name":"Alxndra Lgh","id":"112576"},{"name":"Kiet Lam","id":"315759"},{"name":"Devon Goodrich","id":"401735"},{"name":"Pinar Comezoglu","id":"411221"},{"name":"Tom Reinstein","id":"413142"},{"name":"Autumn Floyd","id":"419551"},{"name":"Andrew HoChoy","id":"420469"},{"name":"Desmond Ling","id":"427018"},{"name":"Deborah Feld","id":"430324"},{"name":"Ben Ou-Yang","id":"432008"},{"name":"Kathy Chen","id":"824056"},{"name":"Nithya Chalikonda","id":"825984"},{"name":"Alyson Laynas","id":"1311306"} -->
-
 <h3>Search gifts by tag: </h3>
   <% @tags.each do |tag| %>
   <%= link_to tag.name, tag %> |
@@ -18,5 +8,3 @@
 <% @gifts.each do |gift| %>
   <h4><%= link_to gift.name, gift %></h4>
 <% end %>
-
-<% #TODO ask for more permissions for scope? , birthday, read_stream, read_friendlists, friends_likes, friends_stats, offline_access' %>

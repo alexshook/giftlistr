@@ -6,7 +6,6 @@ class GiftsController < ApplicationController
     @tags = Tag.all
     # @user = current_user
     @user = current_user
-    @friends = current_user.facebook_friends(current_user)
   end
 
   def show
@@ -45,11 +44,6 @@ class GiftsController < ApplicationController
 
     @gift.add_tag(@tag)
   end
-
-  # def friends
-  #   @user = User.find params[:id]
-  #   @friends = current_user.facebook_friends(current_user)
-  # end
 
   # def add
   #   @giftlist = Giftlist.find params[:giftlist]
