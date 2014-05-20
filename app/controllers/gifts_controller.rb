@@ -4,7 +4,9 @@ class GiftsController < ApplicationController
   def index
     @gifts = Gift.all
     @tags = Tag.all
+    # @user = current_user
     @user = current_user
+    @friends = current_user.facebook_friends(current_user)
   end
 
   def show
@@ -37,21 +39,29 @@ class GiftsController < ApplicationController
   end
 
   def add_tag
+    # TODO this might be a good place for a callback - update gifts in the list
     @gift = Gift.find params[:gift]
     @tag = Tag.find params[:tag]
 
     @gift.add_tag(@tag)
   end
 
-  def get_friends
-    @user = User.find params[:id]
-    @user.facebook_friends
-    redirect_to gifts_path
-  end
+  # def friends
+  #   @user = User.find params[:id]
+  #   @friends = current_user.facebook_friends(current_user)
+  # end
 
-      # ff = HTTParty.get("https://graph.facebook.com/me?fields=id,name,friends&access_token=#{@user.oauth_token}")
-
-
+  # def add
+  #   @giftlist = Giftlist.find params[:giftlist]
+  #   @gift = Gift.find params[:gift]
+  #   if @giftlist.add_to_giftlist(@gift)
+  #     flash[:notice] = "Gift added!"
+  #     redirect_to @gift
+  #   else
+  #     flash[:notice] = "Sorry, try that again."
+  #     render 'new'
+  #   end
+  # end
 
   private
   def gift_params
