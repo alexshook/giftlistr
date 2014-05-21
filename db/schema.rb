@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140520210227) do
+ActiveRecord::Schema.define(version: 20140521170817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,12 @@ ActiveRecord::Schema.define(version: 20140520210227) do
   create_table "gifts_tags", id: false, force: true do |t|
     t.integer "gift_id"
     t.integer "tag_id"
+  end
+
+  create_table "recipients", force: true do |t|
+    t.string  "name"
+    t.date    "birthday"
+    t.integer "user_id"
   end
 
   create_table "tags", force: true do |t|

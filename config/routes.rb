@@ -5,7 +5,9 @@ Giftlistr::Application.routes.draw do
   devise_for :admins, controllers: { registrations: "admins/registrations" }
 
   devise_for :users, controllers: { registrations: "users/registrations" }
-  resources :users, only: [:index, :show] do
+  resources :users, only: [:index, :show]
+
+  resources :recipients do
     resources :giftlists, shallow: true
   end
 

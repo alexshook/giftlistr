@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 
   has_many :giftlists
   has_many :gifts
+  has_many :recipients
 
   has_attached_file :avatar, :styles => {
     :medium => "300x300>",
