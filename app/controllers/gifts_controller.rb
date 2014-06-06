@@ -45,6 +45,15 @@ class GiftsController < ApplicationController
     @gift.add_tag(@tag)
   end
 
+  def search
+    q1 = params[:q1].gsub(' ', ',')
+    q2 = params[:q2].gsub(' ', ',')
+    q3 = params[:q3].gsub(' ', ',')
+    q4 = params[:q4].gsub(' ', ',')
+    @gift_search = Gift.search_etsy(q1, q2, q3, q4)['results']
+    binding.pry
+  end
+
   # def add
   #   @giftlist = Giftlist.find params[:giftlist]
   #   @gift = Gift.find params[:gift]

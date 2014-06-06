@@ -1,10 +1,27 @@
-<%= simple_form_for @gift do |f| %>
+<%= form_tag(search_etsy_path, method: "get") do %>
 
-  <%= f.input :name %>
-  <%= f.input :price %>
-  <%= f.input :category %>
-  <%= f.association :tags, as: :check_boxes %>
+Find a gift:
+  <%= label_tag :q1 %>
+  <%= select_tag(:q1, options_for_select([
+    ['one of the girls', "gifts women"], ['one of the guys', "gifts men"], ['coworker', "gifts coworker"], ['couple', "gifts couples"], ['mother', "gifts mother"], ['father', "gifts father"]
+    ])) %>
 
-  <%= f.submit %>
+  <%= label_tag :q2 %>
+  <%= select_tag(:q2, options_for_select([
+    ['fashionista', "fashion style"], ['techie', "tech technology"], ['outdoorsy type', "outdoorsy"], ['loves vintage', "vintage"], ['foodie', "foodie gourmet kitchen"], ['art aficionado', "art painting photography scupture"], ['gadget collector', "gadgets"], ['home decorator', "decor pillows entertaining"]
+    ])) %>
 
+<!-- is there an occasion? -->
+  <%= label_tag :q3 %>
+  <%= select_tag(:q3, options_for_select([
+    ['housewarming', "housewarming"], ['wedding', "wedding"]
+    ])) %>
+
+<!-- get more specific - Likes: -->
+  <%= label_tag :q4 %>
+  <%= select_tag(:q4, options_for_select([
+    ['art', 'art'], ['photography', 'photography'], ['jewelry', 'jewelry']
+    ])) %>
+
+  <%= submit_tag "Search Gifts", name: nil %>
 <% end %>

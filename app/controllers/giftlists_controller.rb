@@ -8,7 +8,7 @@ class GiftlistsController < ApplicationController
   def new
     @giftlist = current_user.giftlists.new
     # path variable set to handle shallow nested resources in form
-    @path = [current_user, @giftlist]
+    @path = [@recipient, @giftlist]
   end
 
   def show
@@ -16,7 +16,8 @@ class GiftlistsController < ApplicationController
     if current_user.id == @giftlist.user_id
       render 'show'
     else
-      redirect_to user_giftlists_path(current_user.id)
+      #  FIXME this helper needs to be fixed
+      redirect_to recipient_giftlists_path(recipient_id)
     end
   end
 

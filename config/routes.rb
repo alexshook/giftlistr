@@ -21,4 +21,5 @@ Giftlistr::Application.routes.draw do
 
   post '/giftlists/add', to: 'giftlists#add'
   post '/gifts/add_tag', to: 'gifts#add_tag'
+  get '/search_etsy', to: 'gifts#search'
 end
