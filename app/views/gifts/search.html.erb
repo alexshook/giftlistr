@@ -2,31 +2,6 @@
   <% @gift_search.each do |search_result| %>
     <p><%= search_result["title"] %></p>
     <p><%= link_to "Purchase on Etsy", search_result["url"] %></p>
-    <p><img src="<%= search_result["Images"]search_result["url_570xN"] %>"></a></p>
+    <p><img src="<%= search_result["Images"][0]["url_570xN"] %>"></a></p>
   <% end %>
 <% end %>
-<!--
-  "Images"=>
-   [{"listing_image_id"=>469407416,
-     "hex_code"=>"7E7E68",
-     "red"=>126,
-     "green"=>126,
-     "blue"=>104,
-     "hue"=>60,
-     "saturation"=>17,
-     "brightness"=>49,
-     "is_black_and_white"=>false,
-     "creation_tsz"=>1371187346,
-     "listing_id"=>153988219,
-     "rank"=>1,
-     "url_75x75"=>
-      "https://img0.etsystatic.com/005/0/5691133/il_75x75.469407416_ftfe.jpg",
-     "url_170x135"=>
-      "https://img0.etsystatic.com/005/0/5691133/il_170x135.469407416_ftfe.jpg",
-     "url_570xN"=>
-      "https://img0.etsystatic.com/005/0/5691133/il_570xN.469407416_ftfe.jpg",
-     "url_fullxfull"=>
-      "https://img0.etsystatic.com/005/0/5691133/il_fullxfull.469407416_ftfe.jpg",
-     "full_height"=>1500,
-     "full_width"=>1125},
- -->
