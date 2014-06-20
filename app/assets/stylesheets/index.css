@@ -1,4 +1,12 @@
 /* Global Styles */
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .container {
   margin: 60px auto
 }
@@ -29,7 +37,8 @@
 }
 
 .icon-large {
-  font-size: 500px;
+  font-size: 400px;
+  padding: 20px 0 0 0;
 }
 
 .center-me {
