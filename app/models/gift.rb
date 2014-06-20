@@ -7,9 +7,9 @@ class Gift < ActiveRecord::Base
 
   validates :name, presence: :true
 
-  def self.search_etsy(q1, q2, q3, q4)
+  def self.search_etsy(q1, q2, q3, q4, q5)
     # return HTTParty.get("https://openapi.etsy.com/v2/listings/active?&keywords=jewelry,silver&limit=10&api_key=#{ENV['ETSY_KEYSTRING']}")
-    search_results = HTTParty.get("https://openapi.etsy.com/v2/listings/active?&keywords=#{q1},#{q2},#{q3},#{q4}&limit=500&includes=Images&api_key=#{ENV['ETSY_KEYSTRING']}")
+    search_results = HTTParty.get("https://openapi.etsy.com/v2/listings/active?&keywords=#{q1},#{q2},#{q3},#{q4},#{q5}&limit=500&includes=Images&api_key=#{ENV['ETSY_KEYSTRING']}")
     return search_results
   end
 

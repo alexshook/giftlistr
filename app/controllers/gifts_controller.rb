@@ -4,7 +4,6 @@ class GiftsController < ApplicationController
   def index
     @gifts = Gift.all
     @tags = Tag.all
-    # @user = current_user
     @user = current_user
   end
 
@@ -50,7 +49,8 @@ class GiftsController < ApplicationController
     q2 = params[:q2].gsub(' ', ',')
     q3 = params[:q3].gsub(' ', ',')
     q4 = params[:q4].gsub(' ', ',')
-    @gift_search = Gift.search_etsy(q1, q2, q3, q4)['results']
+    q5 = params[:q5].gsub(' ', ',')
+    @gift_search = Gift.search_etsy(q1, q2, q3, q4, q5)['results']
   end
 
   # def add

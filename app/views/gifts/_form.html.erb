@@ -1,27 +1,30 @@
-<%= form_tag(search_etsy_path, method: "get") do %>
+<%= form_tag(search_etsy_path, method: 'get') do %>
 
 Find a gift:
-  <%= label_tag :q1 %>
+  <%= label_tag 'Who is it for?' %>
   <%= select_tag(:q1, options_for_select([
-    ['one of the girls', "gifts women"], ['one of the guys', "gifts men"], ['coworker', "gifts coworker"], ['couple', "gifts couples"], ['mother', "gifts mother"], ['father', "gifts father"]
+    ['one of the girls', 'gifts women'], ['one of the guys', 'gifts men'], ['coworker', 'gifts coworker'], ['couple', 'gifts couples'], ['sister', 'gifts sister'], ['aunt', 'gifts aunt'], ['mother', 'gifts mother'], ['grandmother', 'gifts grandmother'], ['brother', 'gifts brother'], ['uncle', 'gifts uncle'], ['father', 'gifts father'], ['grandfather', 'gifts grandfather']
     ])) %>
 
-  <%= label_tag :q2 %>
+  <%= label_tag 'Select a general category: ' %>
   <%= select_tag(:q2, options_for_select([
-    ['fashionista', "fashion style"], ['techie', "tech technology"], ['outdoorsy type', "outdoorsy"], ['loves vintage', "vintage"], ['foodie', "foodie gourmet kitchen"], ['art aficionado', "art painting photography scupture"], ['gadget collector', "gadgets"], ['home decorator', "decor pillows entertaining"]
+    ['fashionista', 'fashion style'], ['techie', 'tech technology'], ['outdoorsy', 'outdoorsy'], ['loves vintage', 'vintage'], ['foodie', 'food gourmet kitchen'], ['art aficionado', 'art painting photo scupture'], ['gadget collector', 'gadgets'], ['home decorator', 'home decor pillows entertaining'], ['nerd!', 'nerd geek'], ['boho chic', 'bohemian free spirit'], ['none of these, thanks!', '']
     ])) %>
 
 <!-- is there an occasion? -->
-  <%= label_tag :q3 %>
+  <%= label_tag 'Is there an occasion?' %>
   <%= select_tag(:q3, options_for_select([
-    ['housewarming', "housewarming"], ['wedding', "wedding"]
+    ['birthday', 'birthday'], ['housewarming', 'housewarming'], ['wedding', 'wedding'], ['hostess', 'hostess'], ['holiday', 'holiday'], ['no occasion', '']
     ])) %>
 
 <!-- get more specific - Likes: -->
-  <%= label_tag :q4 %>
+  <%= label_tag 'Get more specific (optional): ' %>
   <%= select_tag(:q4, options_for_select([
-    ['art', 'art'], ['photography', 'photography'], ['jewelry', 'jewelry']
+    ['none, thanks!', ''], ['art', 'art'], ['photography', 'photography'], ['jewelry', 'jewelry'], ['crafts', 'crafts'], ['clothing', 'clothing'],  ['accessories', 'accessories'], ['stationery', 'stationery'], ['garden', 'garden'],
     ])) %>
 
-  <%= submit_tag "Search Gifts", name: nil %>
+  <%= label_tag 'Don\'t see what you\'re looking for? Type it here: ' %>
+  <%= text_field_tag :q5 %>
+
+  <%= submit_tag 'Search Gifts', name: nil %>
 <% end %>
