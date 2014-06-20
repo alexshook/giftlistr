@@ -1,5 +1,6 @@
+/* Global Styles */
 .container {
-  margin: 62px;
+  margin: 60px auto
 }
 
 #navbar {
@@ -25,4 +26,12 @@
   width: 30%;
   float: right;
   text-align: right;
+}
+
+.icon-large {
+  font-size: 500px;
+}
+
+.center-me {
+  text-align: center;
 }
