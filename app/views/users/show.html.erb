@@ -1,1 +1,12 @@
-<%= @user.email %>
+<%= @user.email %> | <%= link_to "Edit Profile", edit_user_registration_path %>
+
+<% @user.recipients.each do |recipient| %>
+  <ul>
+    <li><%= recipient.name %><li>
+      <% recipient.giftlists.each do |giftlist| %>
+        <ul>
+          <li><%= link_to giftlist.name, giftlist %></li>
+        </ul>
+      <% end %>
+  </ul>
+<% end %>

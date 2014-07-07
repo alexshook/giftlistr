@@ -1,3 +1,16 @@
+10.times do
+  Recipient.create(name: Faker::Name.first_name, birthday: Date.today, user_id: User.all.sample.id)
+end
+
+10.times do |i|
+  Giftlist.create(name: Faker::Company.name + i.to_s, recipient_id: Recipient.all.sample.id, user_id: User.all.sample.id)
+end
+
+10.times do
+  Gift.create(name: Faker::Company.name + " gift", price: 100)
+end
+
+
 # users = User.create([
 # {
 #   email: Faker::Internet.email,

@@ -13,12 +13,12 @@ class GiftlistsController < ApplicationController
 
   def show
     @giftlist = Giftlist.find params[:id]
-    if current_user.id == @giftlist.user_id
-      render 'show'
-    else
-      #  FIXME this helper needs to be fixed
-      redirect_to recipient_giftlists_path(recipient_id)
-    end
+    # if current_user.id == current_user.recipient.user_id
+    #   render 'show'
+    # else
+    #   #  FIXME this helper needs to be fixed
+    #   redirect_to user_path(current_user.id)
+    # end
   end
 
   def create
